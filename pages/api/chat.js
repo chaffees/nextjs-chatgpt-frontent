@@ -16,9 +16,9 @@ export default async function handler(req, res) {
     }
 
     const params = {
-      EndpointName: process.env.SAGEMAKER_ENDPOINT_NAME,
-      Body: new TextEncoder().encode(message),
-      ContentType: 'text/plain',
+        EndpointName: process.env.SAGEMAKER_ENDPOINT_NAME,
+        Body: JSON.stringify({ text: message }),  // Updated to send a JSON object
+        ContentType: 'application/json',  // Updated to indicate we're sending JSON
     };
 
     const command = new InvokeEndpointCommand(params);
