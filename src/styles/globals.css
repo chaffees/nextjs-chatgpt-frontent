@@ -78,7 +78,7 @@ body {
 
 /* New styles for transitions and animations */
 .send-button {
-  transition: text-shadow 0.3s, transform 0.3s; /* Adding transition for transform to achieve the "pop out" effect */
+  transition: background-color 0.3s, text-shadow 0.3s, transform 0.3s; /* Adding transition for transform to achieve the "pop out" effect */
 }
 
 .send-button:hover {
@@ -112,4 +112,22 @@ body {
 
 .chat-messages-container {
   color: var(--foreground-color); /* Set the text color to use the foreground color variable */
+}
+
+.user-bg {
+  background-color: var(--message-background-color-user);
+  border-radius: 12px 12px 0 12px; /* Rounded corners except bottom right */
+  padding: 10px;
+  margin: 5px 0;
+  max-width: 70%; /* Set a max width to maintain a chat bubble appearance */
+  word-wrap: break-word; /* Ensure long words do not overflow */
+}
+
+.ai-bg {
+  background-color: var(--message-background-color-ai);
+  border-radius: 12px 12px 12px 0; /* Rounded corners except bottom left */
+  padding: 10px;
+  margin: 5px 0;
+  max-width: 70%; /* Set a max width to maintain a chat bubble appearance */
+  word-wrap: break-word; /* Ensure long words do not overflow */
 }
