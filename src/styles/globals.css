@@ -69,50 +69,12 @@ body {
   margin: 0 auto; /* Center the container */
 }
 
-/* Style the chat header */
-.chat-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: var(--chat-container-bg); /* Set background to use the variable that sets the chat container background */
-  color: var(--header-text-color);
+/* New container styles */
+.container {
+  background-color: var(--chat-container-bg); /* Set the background color using the variable */
+  border-radius: 16px; /* Optional: Add border-radius for rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add box-shadow for a subtle lift effect */
 }
-
-/* Style the chat window */
-.chat-window {
-  background-color: var(--chat-window-bg);
-  overflow: hidden;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 1rem;
-}
-
-.message-input-container {
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-  background-color: var(--input-container-bg);
-  border-radius: 20px;
-  width: 100%; /* Ensure the container takes up the full width */
-}
-
-.message-input {
-  flex-grow: 1;
-  padding: 1rem; /* Adjusted padding for more space */
-  min-height: 50px; /* Set a minimum height to make the input field taller */
-  width: 100%; /* Set width to 100% to take full width of the container */
-  border-radius: 20px;
-  outline: none;
-  background-color: var(--input-bg);
-  border: 1px solid var(--input-border-color);
-  color: var(--input-text-color);
-  display: flex;
-  align-items: center; /* Align items to the center vertically */
-}
-
 
 /* New styles for transitions and animations */
 .send-button {
@@ -125,21 +87,29 @@ body {
   transform: translateY(-50%) scale(1.2); /* Slightly scale the icon to give a 3D effect, while maintaining the vertical centering */
 }
 
-.chat-message {
-  padding: 0.5rem;
-  border-radius: 8px;
-  margin: 0.5rem 0;
+/* Styles for the message input */
+.message-input {
+  flex-grow: 1;
+  padding: 1rem; /* Adjusted padding for more space */
+  min-height: 50px; /* Set a minimum height to make the input field taller */
+  width: 100%; /* Set width to 100% to take full width of the container */
+  border-radius: 20px;
+  outline: none;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border-color);
+  color: var(--foreground-color); /* Set the text color to use the foreground color variable */
+  display: flex;
+  align-items: center; /* Align items to the center vertically */
 }
 
-.chat-message.user-bg {
-  background-color: var(--message-background-color-user);
+/* Styles for the chat history */
+.chat-history {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding: 1rem;
+  color: var(--foreground-color); /* Set the text color to use the foreground color variable */
 }
 
-.chat-message.ai-bg {
-  background-color: var(--message-background-color-ai);
-}
-
-.chat-message.error-bg {
-  background-color: red;
-  color: white;
+.chat-messages-container {
+  color: var(--foreground-color); /* Set the text color to use the foreground color variable */
 }
